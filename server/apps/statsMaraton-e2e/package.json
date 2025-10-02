@@ -1,0 +1,26 @@
+{
+  "name": "@stats-maraton/statsMaraton-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@stats-maraton/statsMaraton"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/statsMaraton-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@stats-maraton/statsMaraton:build",
+          "@stats-maraton/statsMaraton:serve"
+        ]
+      }
+    }
+  }
+}
